@@ -231,6 +231,8 @@ html[lang='ta'] .hero h1 { font-size: clamp(38px, 4.7vw, 58px); line-height: 1.2
 html[lang='ta'] h2 { font-size: clamp(35px, 4vw, 52px); line-height: 1.35; font-weight: 600; }
 html[lang='ta'] .brand-name { font-size: 15px; line-height: 1.4; }
 html[lang='ta'] .hero-tamil-name { display: none; }
+/* The Tamil h2 rule above must not enlarge the footer column headings. */
+html[lang='ta'] .footer-column h2 { font-size: 11px; line-height: 1.6; font-weight: 700; }
 
 @media (max-width: 1080px) {
   .page-shell { width: min(var(--shell), calc(100% - 56px)); }

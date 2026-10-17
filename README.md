@@ -37,9 +37,8 @@ Replace the example remote with the HTTPS URL of your own repository. Then impor
 ## Content and asset notes
 
 - English is the default; the `English | தமிழ்` switch changes page content without navigation and remembers a visitor's choice in browser storage where available.
-- The website uses local copies of the supplied temple photographs, the three enhanced history images from the follow-up, and the original donation QR image.
+- The website uses local copies of the supplied temple photographs, and the three enhanced history images from the follow-up.
 - Google Maps directions use the exact requester-provided link.
-- Donation controls use the supplied UPI ID, app link, and QR. Visitors must verify the recipient and amount in their UPI app and authorize payment themselves.
 - The Special Events section currently states that no special events are listed; dates and timings can be added when provided.
 - The Contact section lists Sivakumar (`+91 6382 182 841`) and Athith (`+91 7358218611`) with tap-to-call links, using the numbers supplied by the requester.
 - The requester confirmed that the inscription is verified; the enhanced inscription image is displayed without a review warning.
@@ -47,7 +46,7 @@ Replace the example remote with the HTTPS URL of your own repository. Then impor
 
 ## Project layout
 
-- `src/App.tsx` — accessible single-page layout, language state, image filtering/lightbox, map and UPI actions.
+- `src/App.tsx` — accessible single-page layout, language state, image filtering/lightbox and map actions.
 - `src/content.ts` — bilingual visitor-facing text and gallery photo data.
 - `src/styles.css` — responsive visual system and interaction styles.
-- `public/images/` — supplied temple photographs and donation QR used by the website.
+- `public/images/` — supplied temple photographs used by the website.

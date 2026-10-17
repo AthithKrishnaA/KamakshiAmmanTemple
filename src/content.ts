@@ -2,8 +2,6 @@ export type Language = 'en' | 'ta';
 export type GalleryCategory = 'exterior' | 'deity' | 'other' | 'heritage';
 
 export const DIRECTIONS_URL = 'https://maps.app.goo.gl/Qc5W1fos4k9ztnnu7?g_st=iw';
-export const UPI_ID = 'athithlakshan-1@okicici';
-export const UPI_PAYMENT_URL = 'upi://pay?pa=athithlakshan-1%40okicici&pn=Arulmigu%20Sri%20Kamatchi%20Amman%20Temple&cu=INR';
 
 export const copy = {
   en: {
@@ -16,7 +14,6 @@ export const copy = {
     visit: 'Visit',
     specialEvents: 'Special events',
     contact: 'Contact',
-    donate: 'Donate',
     language: 'Choose language',
     navLabel: 'Main navigation',
     menu: 'Open navigation menu',
@@ -69,26 +66,13 @@ export const copy = {
     callContact: 'Call',
     contactSivakumar: 'Sivakumar',
     contactAthith: 'Athith',
-    donateEyebrow: 'Offer with devotion',
-    donateHeading: 'Support the temple',
-    donateText: 'Your offering, however humble, supports the temple, and all donations are used only for the temple. Scan the UPI QR code or copy the UPI ID and pay with any UPI app. Please review the details before you confirm.',
-    scanTitle: 'Scan with any UPI app',
-    scanText: 'The QR code shows the account-holder name “Athithkrishna K”. Please verify the recipient name and amount in your UPI app before confirming.',
-    upiLabel: 'UPI ID',
-    copyUpi: 'Copy UPI ID',
-    copied: 'UPI ID copied',
-    copyFailed: 'Could not copy. Please copy the UPI ID above.',
-    donateNow: 'Open a UPI app',
-    paymentCaution: 'Opening a UPI app does not complete a payment. Please check the recipient and amount in the app, then confirm the payment yourself.',
     footerLine: 'A guide to the temple, its heritage, and visitor information.',
     footerDirections: 'Directions',
-    footerDonate: 'Donation information',
     footerNav: 'Explore',
     backToTop: 'Back to top',
     copyright: 'Arulmigu Sri Kamatchi Amman Temple. All rights reserved.',
     decorativeMark: 'Temple flower mark',
     galleryImageLabel: 'Temple photograph',
-    qrImageAlt: 'UPI payment QR code for the temple, showing account-holder name Athithkrishna K and UPI ID athithlakshan-1@okicici',
   },
   ta: {
     skip: 'உள்ளடக்கத்திற்குச் செல்லுங்கள்',
@@ -100,7 +84,6 @@ export const copy = {
     visit: 'வருகை',
     specialEvents: 'சிறப்பு நிகழ்வுகள்',
     contact: 'தொடர்பு',
-    donate: 'நன்கொடை',
     language: 'மொழியைத் தேர்ந்தெடுக்கவும்',
     navLabel: 'முதன்மை வழிசெலுத்தல்',
     menu: 'வழிசெலுத்தல் பட்டியைத் திறக்கவும்',
@@ -153,26 +136,13 @@ export const copy = {
     callContact: 'அழைக்க',
     contactSivakumar: 'சிவகுமார்',
     contactAthith: 'ஆதித்',
-    donateEyebrow: 'பக்தியுடன் சமர்ப்பிக்க',
-    donateHeading: 'திருக்கோயிலுக்கு ஆதரவளியுங்கள்',
-    donateText: 'உங்கள் காணிக்கை திருக்கோயிலுக்கு ஆதரவாக அமையும்; அனைத்து நன்கொடைகளும் திருக்கோயிலுக்காக மட்டுமே பயன்படுத்தப்படும். UPI QR குறியீட்டை ஸ்கேன் செய்தோ, UPI ஐடியை நகலெடுத்தோ எந்த UPI செயலி வழியாகவும் செலுத்தலாம். உறுதிசெய்வதற்கு முன் விவரங்களைச் சரிபார்க்கவும்.',
-    scanTitle: 'எந்த UPI செயலியிலும் ஸ்கேன் செய்யுங்கள்',
-    scanText: 'QR குறியீட்டில் கணக்கு வைத்திருப்பவரின் பெயர் “Athithkrishna K” எனக் காட்டப்படும். உறுதிசெய்வதற்கு முன் UPI செயலியில் பெறுநர் பெயரையும் தொகையையும் சரிபார்க்கவும்.',
-    upiLabel: 'UPI ஐடி',
-    copyUpi: 'UPI ஐடியை நகலெடுக்கவும்',
-    copied: 'UPI ஐடி நகலெடுக்கப்பட்டது',
-    copyFailed: 'நகலெடுக்க முடியவில்லை. மேலுள்ள UPI ஐடியை நகலெடுக்கவும்.',
-    donateNow: 'UPI செயலியைத் திறக்கவும்',
-    paymentCaution: 'UPI செயலியைத் திறப்பதால் மட்டும் பணம் செலுத்தப்பட்டதாகாது. செயலியில் பெறுநரையும் தொகையையும் சரிபார்த்து, நீங்களே உறுதிசெய்யுங்கள்.',
     footerLine: 'திருக்கோயில், அதன் பாரம்பரியம் மற்றும் வருகையாளர் தகவலுக்கான வழிகாட்டி.',
     footerDirections: 'வழிகாட்டி',
-    footerDonate: 'நன்கொடைத் தகவல்',
     footerNav: 'பார்வையிடுங்கள்',
     backToTop: 'மேலே செல்லுங்கள்',
     copyright: 'அருள்மிகு ஸ்ரீ காமாட்சி அம்மன் திருக்கோயில். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.',
     decorativeMark: 'திருக்கோயில் மலர் சின்னம்',
     galleryImageLabel: 'திருக்கோயில் புகைப்படம்',
-    qrImageAlt: 'திருக்கோயிலுக்கான UPI QR குறியீடு; கணக்கு வைத்திருப்பவரின் பெயர் Athithkrishna K, UPI ஐடி athithlakshan-1@okicici',
   },
 } as const satisfies Record<Language, Record<string, string>>;
 

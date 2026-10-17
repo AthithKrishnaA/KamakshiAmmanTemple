@@ -4,9 +4,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   CalendarDays,
-  Check,
-  Copy,
-  Heart,
   MapPin,
   Menu,
   Phone,
@@ -20,8 +17,6 @@ import {
   type GalleryCategory,
   type GalleryPhoto,
   type Language,
-  UPI_ID,
-  UPI_PAYMENT_URL,
 } from './content';
 
 const navigation = [
@@ -67,8 +62,6 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState<'all' | GalleryCategory>('all');
   const [activePhoto, setActivePhoto] = useState<GalleryPhoto | null>(null);
-  const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'failed'>('idle');
-  const copyTimer = useRef<number | undefined>(undefined);
   const menuToggleRef = useRef<HTMLButtonElement>(null);
   const firstMenuLinkRef = useRef<HTMLAnchorElement>(null);
   const closeLightboxRef = useRef<HTMLButtonElement>(null);
@@ -99,8 +92,6 @@ function App() {
     window.addEventListener('keydown', handleMenuKeyDown);
     return () => window.removeEventListener('keydown', handleMenuKeyDown);
   }, [menuOpen]);
-
-  useEffect(() => () => window.clearTimeout(copyTimer.current), []);
 
   useEffect(() => {
     if (!activePhoto) return undefined;
@@ -145,26 +136,6 @@ function App() {
     if (window.matchMedia('(max-width: 1220px)').matches) menuToggleRef.current?.focus();
   };
 
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(UPI_ID);
-      setCopyStatus('copied');
-    } catch {
-      const field = document.createElement('textarea');
-      field.value = UPI_ID;
-      field.setAttribute('readonly', '');
-      field.style.position = 'fixed';
-      field.style.opacity = '0';
-      document.body.appendChild(field);
-      field.select();
-      const copied = document.execCommand('copy');
-      field.remove();
-      setCopyStatus(copied ? 'copied' : 'failed');
-    }
-    window.clearTimeout(copyTimer.current);
-    copyTimer.current = window.setTimeout(() => setCopyStatus('idle'), 2800);
-  };
-
   const openPhoto = (photo: GalleryPhoto, trigger: HTMLElement) => {
     previousFocusRef.current = trigger;
     setActivePhoto(photo);
@@ -189,9 +160,6 @@ function App() {
                 {t[item.key]}
               </a>
             ))}
-            <a className="mobile-donate-link" href="#donate" onClick={closeNavigation}>
-              {t.donate}<ArrowUpRight size={15} aria-hidden="true" />
-            </a>
           </nav>
 
           <div className="header-actions">
@@ -200,7 +168,6 @@ function App() {
               <span aria-hidden="true">|</span>
               <button type="button" lang="ta" aria-pressed={language === 'ta'} onClick={() => setLanguage('ta')}>தமிழ்</button>
             </div>
-            <a className="header-donate" href="#donate">{t.donate}<ArrowUpRight size={15} aria-hidden="true" /></a>
             <button
               className="menu-toggle"
               ref={menuToggleRef}
@@ -433,38 +400,6 @@ function App() {
             </div>
           </div>
         </section>
-
-        <section className="donation-section section-pad" id="donate" aria-labelledby="donate-heading">
-          <div className="page-shell donation-panel">
-            <div className="donation-copy">
-              <p className="eyebrow eyebrow-light"><span className="eyebrow-rule" />{t.donateEyebrow}</p>
-              <h2 id="donate-heading">{t.donateHeading}</h2>
-              <p className="donation-lead">{t.donateText}</p>
-              <div className="upi-id-block">
-                <span className="upi-label">{t.upiLabel}</span>
-                <code>{UPI_ID}</code>
-                <button className="copy-button" type="button" onClick={handleCopy} aria-label={t.copyUpi}>
-                  {copyStatus === 'copied' ? <Check size={16} aria-hidden="true" /> : <Copy size={16} aria-hidden="true" />}
-                  {copyStatus === 'copied' ? t.copied : t.copyUpi}
-                </button>
-              </div>
-              <p className="copy-status" aria-live="polite" role="status">
-                {copyStatus === 'copied' ? t.copied : copyStatus === 'failed' ? t.copyFailed : ''}
-              </p>
-              <a className="button button-gold" href={UPI_PAYMENT_URL}>
-                <Heart size={16} aria-hidden="true" />{t.donateNow}<ArrowUpRight size={16} aria-hidden="true" />
-              </a>
-              <p className="payment-caution">{t.paymentCaution}</p>
-            </div>
-            <div className="qr-wrap">
-              <div className="qr-card">
-                <img src="/images/donation-upi-qr.png" alt={t.qrImageAlt} loading="lazy" decoding="async" />
-                <div className="qr-caption"><span>{t.scanTitle}</span><span>{UPI_ID}</span></div>
-              </div>
-              <p className="qr-note">{t.scanText}</p>
-            </div>
-          </div>
-        </section>
       </main>
 
       <footer className="site-footer">
@@ -490,7 +425,6 @@ function App() {
           <div className="footer-column footer-visit">
             <h2>{t.visit}</h2>
             <a href={DIRECTIONS_URL} target="_blank" rel="noreferrer">{t.footerDirections}<ArrowUpRight size={14} aria-hidden="true" /></a>
-            <a href="#donate">{t.footerDonate}<ArrowRight size={14} aria-hidden="true" /></a>
             <div className="footer-language language-switch" role="group" aria-label={t.language}>
               <button type="button" aria-pressed={language === 'en'} onClick={() => setLanguage('en')}>English</button>
               <span aria-hidden="true">|</span>

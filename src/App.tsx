@@ -14,6 +14,7 @@ import {
   DIRECTIONS_URL,
   galleryFilters,
   galleryPhotos,
+  gurus,
   type GalleryCategory,
   type GalleryPhoto,
   type Language,
@@ -290,6 +291,19 @@ function App() {
                 <img src="/images/spiritual-leaders-framed-portrait-enhanced.png" alt={language === 'en' ? 'Framed portrait from the temple’s heritage collection' : 'திருக்கோயில் பாரம்பரியத் தொகுப்பில் உள்ள சட்டமிடப்பட்ட உருவப்படம்'} loading="lazy" decoding="async" />
                 <figcaption>{t.portraitCaption}</figcaption>
               </figure>
+            </div>
+            <div className="history-gurus">
+              <h3 id="gurus-heading">{t.gurusHeading}</h3>
+              <p className="history-gurus-intro">{t.gurusIntro}</p>
+              <ul className="guru-list" aria-labelledby="gurus-heading">
+                {gurus.map((guru) => (
+                  <li className="guru-card" key={guru.name.en}>
+                    <p className="guru-order">{guru.order[language]}</p>
+                    <h4 className="guru-name">{guru.name[language]}</h4>
+                    <p className="guru-text">{guru.text[language]}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>

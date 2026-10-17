@@ -41,6 +41,8 @@ export const copy = {
     historyText: 'A collage of historical photographs, a framed portrait and a Tamil inscription offer a glimpse into the heritage of the temple.',
     inscriptionCaption: 'Temple inscription',
     portraitCaption: 'Framed portrait from the temple’s heritage collection',
+    gurusHeading: 'Gurus of Sri Kanchi Kamakoti Peetham',
+    gurusIntro: 'The temple’s heritage photographs feature three successive Jagadgurus of Sri Kanchi Kamakoti Peetham, Kanchipuram.',
     galleryEyebrow: 'A closer look',
     galleryHeading: 'Temple photographs',
     galleryText: 'Photographs of the temple, grouped by place and subject.',
@@ -110,6 +112,8 @@ export const copy = {
     historyText: 'வரலாற்றுப் புகைப்படத் தொகுப்பு, சட்டமிடப்பட்ட உருவப்படம், தமிழ் கல்வெட்டு ஆகியவை திருக்கோயிலின் பாரம்பரியத்தை நினைவுகூர்கின்றன.',
     inscriptionCaption: 'திருக்கோயில் கல்வெட்டு',
     portraitCaption: 'திருக்கோயில் பாரம்பரியத் தொகுப்பில் உள்ள சட்டமிடப்பட்ட உருவப்படம்',
+    gurusHeading: 'ஸ்ரீ காஞ்சி காமகோடி பீடத்தின் குருமார்கள்',
+    gurusIntro: 'திருக்கோயிலின் பாரம்பரியப் புகைப்படங்களில், காஞ்சிபுரம் ஸ்ரீ காஞ்சி காமகோடி பீடத்தின் தொடர்ச்சியான மூன்று ஜகத்குருக்கள் இடம்பெற்றுள்ளனர்.',
     galleryEyebrow: 'அருகில் காணுங்கள்',
     galleryHeading: 'திருக்கோயில் புகைப்படங்கள்',
     galleryText: 'இடம் மற்றும் பொருளின் அடிப்படையில் தொகுக்கப்பட்ட திருக்கோயில் புகைப்படங்கள்.',
@@ -150,6 +154,39 @@ export const galleryFilters: { id: 'all' | GalleryCategory; label: keyof typeof 
   { id: 'deity', label: 'deityCategory' },
   { id: 'other', label: 'otherCategory' },
   { id: 'heritage', label: 'heritageCategory' },
+];
+
+export interface Guru {
+  order: Record<Language, string>;
+  name: Record<Language, string>;
+  text: Record<Language, string>;
+}
+
+export const gurus: Guru[] = [
+  {
+    order: { en: '68th Jagadguru · Maha Periyava', ta: '68-வது ஜகத்குரு · மகா பெரியவா' },
+    name: { en: 'Sri Chandrasekharendra Saraswati Swamigal', ta: 'ஸ்ரீ சந்திரசேகரேந்திர சரஸ்வதி ஸ்வாமிகள்' },
+    text: {
+      en: 'Revered as Maha Periyava, Mahaswami or the Kanchi Paramacharya, he is remembered for his simplicity, spiritual wisdom and long padayatras across India.',
+      ta: 'மகா பெரியவா, மகாஸ்வாமி, காஞ்சி பரமாசார்யா என்று போற்றப்படும் இவர், எளிமை, ஆன்மிக ஞானம் மற்றும் இந்தியா முழுவதும் மேற்கொண்ட நீண்ட பாதயாத்திரைகளுக்காக நினைவுகூரப்படுகிறார்.',
+    },
+  },
+  {
+    order: { en: '69th Jagadguru', ta: '69-வது ஜகத்குரு' },
+    name: { en: 'Sri Jayendra Saraswati Swamigal', ta: 'ஸ்ரீ ஜெயேந்திர சரஸ்வதி ஸ்வாமிகள்' },
+    text: {
+      en: 'He succeeded Maha Periyava as head of the Peetham and expanded its educational, healthcare and charitable work, including schools and hospitals.',
+      ta: 'மகா பெரியவாவுக்குப் பின் பீடத்தின் தலைவராகப் பொறுப்பேற்று, பள்ளிகள், மருத்துவமனைகள் உள்ளிட்ட கல்வி, மருத்துவம் மற்றும் அறப்பணிகளை விரிவுபடுத்தினார்.',
+    },
+  },
+  {
+    order: { en: '70th Jagadguru', ta: '70-வது ஜகத்குரு' },
+    name: { en: 'Sri Sankara Vijayendra Saraswati Swamigal', ta: 'ஸ்ரீ சங்கர விஜயேந்திர சரஸ்வதி ஸ்வாமிகள்' },
+    text: {
+      en: 'He became head of the Peetham in 2018 after Sri Jayendra Saraswati Swamigal and is its present Jagadguru.',
+      ta: 'ஸ்ரீ ஜெயேந்திர சரஸ்வதி ஸ்வாமிகளுக்குப் பின் 2018-இல் பீடத்தின் தலைவராகப் பொறுப்பேற்று, தற்போதைய ஜகத்குருவாக உள்ளார்.',
+    },
+  },
 ];
 
 export interface GalleryPhoto {

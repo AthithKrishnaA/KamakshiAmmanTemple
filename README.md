@@ -40,7 +40,7 @@ Replace the example remote with the HTTPS URL of your own repository. Then impor
 - The website uses local copies of the supplied temple photographs, and the three enhanced history images from the follow-up.
 - Google Maps directions use the exact requester-provided link.
 - The Special Events section currently states that no special events are listed; dates and timings can be added when provided.
-- The Contact section lists Sivakumar (`+91 6382 182 841`) and Athith (`+91 7358218611`) with tap-to-call links, using the numbers supplied by the requester.
+- The Contact section lists Sivakumar (`+91 6382 182 841`) with a tap-to-call link, using the number supplied by the requester.
 - The requester confirmed that the inscription is verified; the enhanced inscription image is displayed without a review warning.
 - No address, opening hours, email, event dates, or worship schedule has been invented.
 

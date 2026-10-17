@@ -389,14 +389,6 @@ function App() {
                 </span>
                 <ArrowUpRight className="contact-arrow" size={17} aria-hidden="true" />
               </a>
-              <a className="contact-card" href="tel:+917358218611" aria-label={`${t.callContact} ${t.contactAthith}, +91 7358218611`}>
-                <span className="contact-icon"><Phone size={19} aria-hidden="true" /></span>
-                <span className="contact-details">
-                  <span className="contact-name">{t.contactAthith}</span>
-                  <span className="contact-number">+91 7358218611</span>
-                </span>
-                <ArrowUpRight className="contact-arrow" size={17} aria-hidden="true" />
-              </a>
             </div>
           </div>
         </section>
